@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+path="res://.godot/imported/sibenik.obj-2af81a67842ade5a6c5011e97107f9de.mesh"
+
+[deps]
+
+files=[ "res://.godot/imported/sibenik.obj-2af81a67842ade5a6c5011e97107f9de.mesh" ]
+
+source_file="res://sibenik/sibenik.obj"
+dest_files=[ "res://.godot/imported/sibenik.obj-2af81a67842ade5a6c5011e97107f9de.mesh", "res://.godot/imported/sibenik.obj-2af81a67842ade5a6c5011e97107f9de.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

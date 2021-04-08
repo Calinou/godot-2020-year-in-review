@@ -1,0 +1,169 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/inter_variable.ttf" type="FontData" id=1]
+[ext_resource path="res://test_variable_fonts.gd" type="Script" id=2]
+
+[sub_resource type="Font" id=1]
+data/0 = ExtResource( 1 )
+
+[sub_resource type="FontData" id=2]
+data_path = "res://fonts/inter_variable.ttf"
+antialiased = true
+hinting = 1
+variation/weight = 500.0
+variation/slant = 0.0
+
+[sub_resource type="Font" id=3]
+data/0 = SubResource( 2 )
+
+[node name="TestVariableFonts" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 512, 300 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.176471, 0.203922, 0.266667, 1 )
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.5
+offset_top = -66.5
+offset_right = 41.5
+offset_bottom = -45.5
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = SubResource( 1 )
+text = "Variable font"
+align = 1
+valign = 1
+structured_text_bidi_override_options = [  ]
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+blend_times = [  ]
+script = null
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.0
+offset_top = 60.5
+offset_right = 166.0
+offset_bottom = 243.5
+custom_constants/separation = 6
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Size" type="HBoxContainer" parent="VBoxContainer"]
+offset_right = 332.0
+offset_bottom = 57.0
+custom_constants/separation = 16
+script = null
+
+[node name="Label" type="Label" parent="VBoxContainer/Size"]
+offset_right = 158.0
+offset_bottom = 57.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+custom_font_sizes/font_size = 44
+text = "Size"
+align = 2
+structured_text_bidi_override_options = [  ]
+script = null
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/Size"]
+offset_left = 174.0
+offset_top = 20.0
+offset_right = 332.0
+offset_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 12.0
+value = 16.0
+script = null
+
+[node name="Weight" type="HBoxContainer" parent="VBoxContainer"]
+offset_top = 63.0
+offset_right = 332.0
+offset_bottom = 120.0
+custom_constants/separation = 16
+script = null
+
+[node name="Label" type="Label" parent="VBoxContainer/Weight"]
+offset_right = 158.0
+offset_bottom = 57.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+custom_font_sizes/font_size = 44
+text = "Weight"
+align = 2
+structured_text_bidi_override_options = [  ]
+script = null
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/Weight"]
+offset_left = 174.0
+offset_top = 20.0
+offset_right = 332.0
+offset_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 100.0
+max_value = 900.0
+step = 10.0
+value = 100.0
+script = null
+
+[node name="Slant" type="HBoxContainer" parent="VBoxContainer"]
+offset_top = 126.0
+offset_right = 332.0
+offset_bottom = 183.0
+custom_constants/separation = 16
+script = null
+
+[node name="Label" type="Label" parent="VBoxContainer/Slant"]
+offset_right = 158.0
+offset_bottom = 57.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+custom_font_sizes/font_size = 44
+text = "Slant"
+align = 2
+structured_text_bidi_override_options = [  ]
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/Slant"]
+offset_left = 174.0
+offset_top = 20.0
+offset_right = 332.0
+offset_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 10.0
+script = null
+
+[connection signal="value_changed" from="VBoxContainer/Size/HSlider" to="." method="_on_size_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Weight/HSlider" to="." method="_on_weight_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Slant/HSlider" to="." method="_on_slant_value_changed"]

@@ -1,0 +1,98 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Camera3D.gd" type="Script" id=1]
+[ext_resource path="res://city.obj" type="ArrayMesh" id=2]
+
+[sub_resource type="PhysicalSkyMaterial" id=1]
+
+[sub_resource type="Sky" id=2]
+sky_material = SubResource( 1 )
+
+[sub_resource type="Environment" id=3]
+background_mode = 2
+sky = SubResource( 2 )
+tonemap_mode = 2
+tonemap_white = 6.0
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_read_sky_light = true
+sdfgi_bounce_feedback = 1.0
+sdfgi_cascades = 0
+sdfgi_min_cell_size = 0.8
+sdfgi_cascade0_distance = 51.2
+sdfgi_y_scale = 2
+fog_enabled = true
+fog_density = 0.007
+fog_aerial_perspective = 1.0
+
+[sub_resource type="StandardMaterial3D" id=4]
+albedo_color = Color( 0.25, 0.25, 0.25, 1 )
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id=5]
+albedo_color = Color( 0, 0, 0, 1 )
+emission_enabled = true
+emission = Color( 0, 0.670588, 1, 1 )
+emission_energy = 100.0
+
+[sub_resource type="BoxMesh" id=6]
+material = SubResource( 5 )
+
+[sub_resource type="StandardMaterial3D" id=7]
+albedo_color = Color( 0, 0, 0, 1 )
+emission_enabled = true
+emission = Color( 1, 0.00392157, 0, 1 )
+emission_energy = 50.0
+
+[sub_resource type="BoxMesh" id=8]
+material = SubResource( 7 )
+
+[node name="Node3D" type="Node3D"]
+script = null
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+script = null
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform( 0.982806, 0.0114184, -0.184287, 0, 0.998086, 0.0618415, 0.18464, -0.0607782, 0.980925, 18.7045, 9.53139, 42.3559 )
+script = ExtResource( 1 )
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform( 0.0671077, 0.72071, -0.689981, 0, 0.69154, 0.722338, 0.997746, -0.0484744, 0.0464076, 4.50735, 5.87336, 10.0216 )
+shadow_enabled = true
+shadow_bias = 0.01
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 150.0
+script = null
+
+[node name="City" type="MeshInstance3D" parent="."]
+material_override = SubResource( 4 )
+gi_mode = 1
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+script = null
+
+[node name="CityExtension" type="MeshInstance3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -167 )
+material_override = SubResource( 4 )
+gi_mode = 1
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+script = null
+
+[node name="CyanGlowBox" type="MeshInstance3D" parent="."]
+transform = Transform( 0.615129, 0.772119, -0.159525, -0.150403, -0.0837013, -0.985075, -0.773948, 0.629942, 0.0646416, 21.6441, -1.28258, -9.85887 )
+gi_mode = 1
+mesh = SubResource( 6 )
+material/0 = null
+script = null
+
+[node name="OrangeGlowBox" type="MeshInstance3D" parent="."]
+transform = Transform( 0.615129, 0.772119, -0.159525, -0.150403, -0.0837013, -0.985075, -0.773948, 0.629942, 0.0646416, 21.6441, -1.28258, 7.14113 )
+gi_mode = 1
+mesh = SubResource( 8 )
+material/0 = null
+script = null
