@@ -1,135 +1,108 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://nkeun58en0rq"]
 
-[ext_resource path="res://default_env.tres" type="Environment" id=1]
-[ext_resource path="res://logo_blur.png" type="Texture2D" id=2]
-[ext_resource path="res://Camera3D.gd" type="Script" id=3]
+[ext_resource type="Environment" uid="uid://c5h1ti1538ppq" path="res://default_env.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://bhtbowwfln6r0" path="res://logo_blur.png" id="2"]
 
-[sub_resource type="PlaneMesh" id=1]
-size = Vector2( 8000, 8000 )
+[sub_resource type="PlaneMesh" id="1"]
+size = Vector2(8000, 8000)
 
-[sub_resource type="BoxMesh" id=2]
+[sub_resource type="BoxMesh" id="2"]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id="3"]
 resource_name = "move_camera_light"
 length = 10.0
-loop = true
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("SpotLight3D:transform")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 5, 10 ),
-"transitions": PackedFloat32Array( -2, -2, -2 ),
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(-2, -2, -2),
 "update": 0,
-"values": [ Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.03406, 2.55207 ), Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5.03406, 1.55207 ), Transform( 1, 0, 0, 0, 5.94334e-09, 1, 0, -1, 5.94334e-09, 0, 8.03406, -0.447935 ) ]
+"values": [Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.03406, 2.55207), Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5.03406, 1.55207), Transform3D(1, 0, 0, 0, 5.94334e-09, 1, 0, -1, 5.94334e-09, 0, 8.03406, -0.447935)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("OmniLight3D:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 10 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector3( -105, 0, 0 ), Vector3( -75, 360, 180 ) ]
+"values": [Vector3(-105, 0, 0), Vector3(-75, 360, 180)]
 }
 
-[sub_resource type="CylinderMesh" id=4]
+[sub_resource type="CylinderMesh" id="4"]
 flip_faces = true
 top_radius = 3.212
 bottom_radius = 2.207
 radial_segments = 4
 
 [node name="Node3D" type="Node3D"]
-script = null
 
 [node name="Ground" type="MeshInstance3D" parent="."]
-mesh = SubResource( 1 )
-material/0 = null
-script = null
+mesh = SubResource( "1" )
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform( 0.65542, -0.306645, 0.690212, 0, 0.913869, 0.40601, -0.755264, -0.266107, 0.598968, 4.68647, 4.6566, 1.63777 )
-script = ExtResource( 3 )
+transform = Transform3D(0.65542, -0.306645, 0.690212, 0, 0.913869, 0.40601, -0.755264, -0.266107, 0.598968, 4.68647, 4.6566, 1.63777)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource( 1 )
-script = null
+environment = ExtResource( "1" )
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.03406, 2.55207 )
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.03406, 2.55207)
 light_energy = 6.0
-light_projector = ExtResource( 2 )
+light_projector = ExtResource( "2" )
 shadow_enabled = true
 shadow_bias = 0.05
 spot_range = 9.0
 spot_angle = 45.3
 spot_angle_attenuation = 3.13834
-script = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -2.4, 1, -2 )
-mesh = SubResource( 2 )
-material/0 = null
-script = null
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -2.4, 1, -2)
+mesh = SubResource( "2" )
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 1, -3.4 )
-mesh = SubResource( 2 )
-material/0 = null
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 1, -3.4)
+mesh = SubResource( "2" )
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9407e-08, 4, -3 )
-mesh = SubResource( 2 )
-material/0 = null
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9407e-08, 4, -3)
+mesh = SubResource( "2" )
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, -3 )
-mesh = SubResource( 2 )
-material/0 = null
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, -3)
+mesh = SubResource( "2" )
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, -3 )
-mesh = SubResource( 2 )
-material/0 = null
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, -3)
+mesh = SubResource( "2" )
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 2.6, 1, -2 )
-mesh = SubResource( 2 )
-material/0 = null
-script = null
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 2.6, 1, -2)
+mesh = SubResource( "2" )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "move_camera_light"
-anims/move_camera_light = SubResource( 3 )
-blend_times = [  ]
-script = null
+anims/move_camera_light = SubResource( "3" )
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform( 1, 0, 0, 0, -0.9992, 0.0399923, 0, -0.0399923, -0.9992, -5.92277, 1, 0.703781 )
-light_color = Color( 1, 0.615686, 0.615686, 1 )
+transform = Transform3D(1, 0, 0, 0, -0.9992, 0.0399923, 0, -0.0399923, -0.9992, -5.92277, 1, 0.703781)
+light_color = Color(1, 0.615686, 0.615686, 1)
 light_energy = 22.62
-light_projector = ExtResource( 2 )
+light_projector = ExtResource( "2" )
 shadow_enabled = true
-shadow_bias = 0.5
 omni_range = 3.3
 omni_attenuation = 2.0
-script = null
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
-transform = Transform( 0.999948, 0, -0.0101751, 0, 1, 0, 0.0101751, 0, 0.999948, -5.92277, 0.5, 0.650766 )
-mesh = SubResource( 4 )
-material/0 = null
-script = null
+transform = Transform3D(0.999948, 0, -0.0101751, 0, 1, 0, 0.0101751, 0, 0.999948, -5.92277, 0.5, 0.650766)
+mesh = SubResource( "4" )
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform( -0.304901, 0.125208, -0.944118, 0, 0.99132, 0.131468, 0.952384, 0.0400849, -0.302255, -13.8427, 2.98533, -7.49479 )
-script = null
+transform = Transform3D(-0.304901, 0.125208, -0.944118, 0, 0.99132, 0.131468, 0.952384, 0.0400849, -0.302255, -13.8427, 2.98533, -7.49479)

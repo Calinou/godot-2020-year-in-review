@@ -2,6 +2,7 @@
 
 importer="texture"
 type="StreamTexture2D"
+uid="uid://dkk08kmca0ug6"
 path="res://.godot/imported/magic_02.png-51877ebbba815e8906a81974ec3f6964.stex"
 metadata={
 "vram_texture": false
@@ -10,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://addons/kenney_particle_pack/magic_02.png"
-dest_files=[ "res://.godot/imported/magic_02.png-51877ebbba815e8906a81974ec3f6964.stex" ]
+dest_files=["res://.godot/imported/magic_02.png-51877ebbba815e8906a81974ec3f6964.stex"]
 
 [params]
 
@@ -27,7 +28,7 @@ roughness/mode=0
 roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
-process/invert_color=false
+process/normal_map_invert_y=false
 process/HDR_as_SRGB=false
 process/size_limit=0
 detect_3d/compress_to=1

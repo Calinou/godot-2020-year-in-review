@@ -2,17 +2,18 @@
 
 importer="texture"
 type="StreamTexture2D"
+uid="uid://b04ycaxo1mrxm"
 path.s3tc="res://.godot/imported/Brushed_Metal_Tiles_04_2K_Base_Color.png-3cb11b866635f8a88b396c9fe34314a6.s3tc.stex"
 path.etc2="res://.godot/imported/Brushed_Metal_Tiles_04_2K_Base_Color.png-3cb11b866635f8a88b396c9fe34314a6.etc2.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://cgbookcase/Brushed_Metal_Tiles_04_2K_Base_Color.png"
-dest_files=[ "res://.godot/imported/Brushed_Metal_Tiles_04_2K_Base_Color.png-3cb11b866635f8a88b396c9fe34314a6.s3tc.stex", "res://.godot/imported/Brushed_Metal_Tiles_04_2K_Base_Color.png-3cb11b866635f8a88b396c9fe34314a6.etc2.stex" ]
+dest_files=["res://.godot/imported/Brushed_Metal_Tiles_04_2K_Base_Color.png-3cb11b866635f8a88b396c9fe34314a6.s3tc.stex", "res://.godot/imported/Brushed_Metal_Tiles_04_2K_Base_Color.png-3cb11b866635f8a88b396c9fe34314a6.etc2.stex"]
 
 [params]
 
@@ -29,7 +30,7 @@ roughness/mode=0
 roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
-process/invert_color=false
+process/normal_map_invert_y=false
 process/HDR_as_SRGB=false
 process/size_limit=0
 detect_3d/compress_to=0

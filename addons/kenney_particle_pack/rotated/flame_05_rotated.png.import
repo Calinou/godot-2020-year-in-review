@@ -2,6 +2,7 @@
 
 importer="texture"
 type="StreamTexture2D"
+uid="uid://pnpel5mq2m5q"
 path="res://.godot/imported/flame_05_rotated.png-4f7db43db56a63ea24f41df7b1265024.stex"
 metadata={
 "vram_texture": false
@@ -10,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://addons/kenney_particle_pack/rotated/flame_05_rotated.png"
-dest_files=[ "res://.godot/imported/flame_05_rotated.png-4f7db43db56a63ea24f41df7b1265024.stex" ]
+dest_files=["res://.godot/imported/flame_05_rotated.png-4f7db43db56a63ea24f41df7b1265024.stex"]
 
 [params]
 
@@ -27,7 +28,7 @@ roughness/mode=0
 roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
-process/invert_color=false
+process/normal_map_invert_y=false
 process/HDR_as_SRGB=false
 process/size_limit=0
 detect_3d/compress_to=1

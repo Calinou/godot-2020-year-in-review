@@ -1,9 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=3 uid="uid://bdiiip4r4qfay"]
 
-[ext_resource path="res://Camera3D.gd" type="Script" id=1]
-[ext_resource path="res://default_env.tres" type="Environment" id=2]
+[ext_resource type="Script" path="res://Camera3D.gd" id="1"]
+[ext_resource type="Environment" uid="uid://c5h1ti1538ppq" path="res://default_env.tres" id="2"]
 
-[sub_resource type="CameraEffects" id=1]
+[sub_resource type="CameraEffects" id="1"]
 dof_blur_far_enabled = true
 dof_blur_far_distance = 15.0
 dof_blur_far_transition = 4.9002
@@ -12,163 +12,145 @@ dof_blur_near_distance = 10.0
 dof_blur_near_transition = 4.9002
 dof_blur_amount = 0.118
 
-[sub_resource type="StandardMaterial3D" id=2]
-albedo_color = Color( 0.03, 0.03, 0.03, 1 )
+[sub_resource type="StandardMaterial3D" id="2"]
+albedo_color = Color(0.03, 0.03, 0.03, 1)
 
-[sub_resource type="PlaneMesh" id=3]
-material = SubResource( 2 )
-size = Vector2( 8000, 8000 )
+[sub_resource type="PlaneMesh" id="3"]
+material = SubResource( "2" )
+size = Vector2(8000, 8000)
 
-[sub_resource type="StandardMaterial3D" id=4]
-albedo_color = Color( 0.466667, 1, 0.133333, 1 )
+[sub_resource type="StandardMaterial3D" id="4"]
+albedo_color = Color(0.466667, 1, 0.133333, 1)
 
-[sub_resource type="BoxMesh" id=5]
-material = SubResource( 4 )
+[sub_resource type="BoxMesh" id="5"]
+material = SubResource( "4" )
 
-[sub_resource type="StandardMaterial3D" id=6]
-albedo_color = Color( 0, 0.392157, 1, 1 )
+[sub_resource type="StandardMaterial3D" id="6"]
+albedo_color = Color(0, 0.392157, 1, 1)
 
-[sub_resource type="SphereMesh" id=7]
-material = SubResource( 6 )
+[sub_resource type="SphereMesh" id="7"]
+material = SubResource( "6" )
 
-[sub_resource type="PrismMesh" id=8]
+[sub_resource type="PrismMesh" id="8"]
 
-[sub_resource type="StandardMaterial3D" id=9]
-albedo_color = Color( 1, 0.772549, 0, 1 )
-
-[sub_resource type="StandardMaterial3D" id=10]
+[sub_resource type="StandardMaterial3D" id="10"]
 emission_enabled = true
-emission = Color( 1, 0.933333, 0.752941, 1 )
+emission = Color(1, 0.933333, 0.752941, 1)
 emission_energy = 20.0
 
-[sub_resource type="SphereMesh" id=11]
-material = SubResource( 10 )
+[sub_resource type="SphereMesh" id="11"]
+material = SubResource( "10" )
 radius = 0.1
 height = 0.2
 radial_segments = 32
 rings = 16
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id="12"]
 resource_name = "move_dof"
 length = 10.0
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Camera3D:effects:dof_blur_far_distance")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 7, 10 ),
-"transitions": PackedFloat32Array( -2, -2, -2 ),
+"times": PackedFloat32Array(0, 7, 10),
+"transitions": PackedFloat32Array(-2, -2, -2),
 "update": 0,
-"values": [ 15.0, 2.0, 0.01 ]
+"values": [15.0, 2.0, 0.01]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Camera3D:effects:dof_blur_near_distance")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 7, 10 ),
-"transitions": PackedFloat32Array( -2, -2, -2 ),
+"times": PackedFloat32Array(0, 7, 10),
+"transitions": PackedFloat32Array(-2, -2, -2),
 "update": 0,
-"values": [ 10.0, 0.01, 0.01 ]
+"values": [10.0, 0.01, 0.01]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Camera3D:effects:dof_blur_amount")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 7, 10 ),
-"transitions": PackedFloat32Array( -2, -2 ),
+"times": PackedFloat32Array(7, 10),
+"transitions": PackedFloat32Array(-2, -2),
 "update": 0,
-"values": [ 0.1, 1.0 ]
+"values": [0.1, 1.0]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Camera3D:effects:dof_blur_near_transition")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 7, 10 ),
-"transitions": PackedFloat32Array( -2, -2 ),
+"times": PackedFloat32Array(7, 10),
+"transitions": PackedFloat32Array(-2, -2),
 "update": 0,
-"values": [ 5.0, 0.01 ]
+"values": [5.0, 0.01]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Camera3D:effects:dof_blur_far_transition")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 7, 10 ),
-"transitions": PackedFloat32Array( -2, -2 ),
+"times": PackedFloat32Array(7, 10),
+"transitions": PackedFloat32Array(-2, -2),
 "update": 0,
-"values": [ 5.0, 0.01 ]
+"values": [5.0, 0.01]
 }
 
 [node name="Node3D" type="Node3D"]
-script = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource( 2 )
-script = null
+environment = ExtResource( "2" )
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform( -0.663109, -0.0724496, 0.745009, 0, 0.995305, 0.0967901, -0.748523, 0.0641824, -0.659995, 5.06388, 1.89202, -3.80184 )
-effects = SubResource( 1 )
-script = ExtResource( 1 )
+transform = Transform3D(-0.663109, -0.0724496, 0.745009, 0, 0.995305, 0.0967901, -0.748523, 0.0641824, -0.659995, 5.06388, 1.89202, -3.80184)
+effects = SubResource( "1" )
+script = ExtResource( "1" )
 
 [node name="Ground" type="MeshInstance3D" parent="."]
-mesh = SubResource( 3 )
-material/0 = null
-script = null
+mesh = SubResource( "3" )
 
 [node name="Box" type="MeshInstance3D" parent="."]
-transform = Transform( 0.997091, 0, -0.0762144, 0.013338, 0.984567, 0.174497, 0.0750382, -0.175006, 0.981704, 0, 0.802894, 2 )
-mesh = SubResource( 5 )
-material/0 = null
-script = null
+transform = Transform3D(0.997091, 0, -0.0762144, 0.013338, 0.984567, 0.174497, 0.0750382, -0.175006, 0.981704, 0, 0.802894, 2)
+mesh = SubResource( "5" )
 
 [node name="Sphere" type="MeshInstance3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.265, 1, -3.36012 )
-mesh = SubResource( 7 )
-material/0 = null
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.265, 1, -3.36012)
+mesh = SubResource( "7" )
 
 [node name="Prism" type="MeshInstance3D" parent="."]
-transform = Transform( 0.332557, -0.463409, -0.821376, 0.786457, 0.616933, -0.0296457, 0.520472, -0.636118, 0.569616, 4.6611, 0.589576, -1.49539 )
-mesh = SubResource( 8 )
-material/0 = SubResource( 9 )
-script = null
+transform = Transform3D(0.332557, -0.463409, -0.821376, 0.786457, 0.616933, -0.0296457, 0.520472, -0.636118, 0.569616, 4.6611, 0.589576, -1.49539)
+mesh = SubResource( "8" )
 
 [node name="GlowSphere" type="MeshInstance3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-mesh = SubResource( 11 )
-material/0 = null
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource( "11" )
 
 [node name="OmniLight3D" type="OmniLight3D" parent="GlowSphere"]
 light_energy = 2.0
 shadow_enabled = true
 omni_range = 2.0
 omni_attenuation = 2.0
-script = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform( 0.974182, -0.119129, 0.191777, 0, 0.849452, 0.527666, -0.225765, -0.514043, 0.827521, 9.51967, 26.193, 41.0775 )
+transform = Transform3D(0.974182, -0.119129, 0.191777, 0, 0.849452, 0.527666, -0.225765, -0.514043, 0.827521, 9.51967, 26.193, 41.0775)
 shadow_enabled = true
-directional_shadow_fade_start = 1.0
+shadow_normal_bias = 2.0
 directional_shadow_blend_splits = true
-script = null
+directional_shadow_fade_start = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "move_dof"
-anims/move_dof = SubResource( 12 )
-blend_times = [  ]
-script = null
+anims/move_dof = SubResource( "12" )

@@ -1,30 +1,27 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=9 format=3 uid="uid://bgiwspvh4ji1y"]
 
-[ext_resource path="res://fonts/noto_sans_regular.ttf" type="FontData" id=1]
-[ext_resource path="res://fonts/noto_nastaliq_urdu_regular.ttf" type="FontData" id=2]
-[ext_resource path="res://fonts/noto_sans_hebrew_regular.ttf" type="FontData" id=3]
-[ext_resource path="res://fonts/noto_sans_arabic_regular.ttf" type="FontData" id=4]
+[ext_resource type="FontData" uid="uid://by7dwivjfyf10" path="res://fonts/noto_sans_regular.ttf" id="1"]
+[ext_resource type="FontData" uid="uid://bvkwc5ib7ujhu" path="res://fonts/noto_nastaliq_urdu_regular.ttf" id="2"]
+[ext_resource type="FontData" uid="uid://dij8x4mx2o477" path="res://fonts/noto_sans_hebrew_regular.ttf" id="3"]
+[ext_resource type="FontData" uid="uid://cq876yxborb0c" path="res://fonts/noto_sans_arabic_regular.ttf" id="4"]
 
-[sub_resource type="Font" id=1]
-data/0 = ExtResource( 1 )
+[sub_resource type="Font" id="1"]
+data/0 = ExtResource( "1" )
 
-[sub_resource type="Font" id=2]
-extra_spacing_top = -4
-data/0 = ExtResource( 4 )
-data/1 = ExtResource( 1 )
+[sub_resource type="Font" id="2"]
+data/0 = ExtResource( "4" )
+data/1 = ExtResource( "1" )
 
-[sub_resource type="Font" id=3]
-data/0 = ExtResource( 3 )
-data/1 = ExtResource( 1 )
+[sub_resource type="Font" id="3"]
+data/0 = ExtResource( "3" )
+data/1 = ExtResource( "1" )
 
-[sub_resource type="Font" id=4]
-extra_spacing_top = -7
-data/0 = ExtResource( 2 )
+[sub_resource type="Font" id="4"]
+data/0 = ExtResource( "2" )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -32,8 +29,7 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.2, 0.211765, 0.223529, 1 )
-script = null
+color = Color(0.2, 0.211765, 0.223529, 1)
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -45,8 +41,7 @@ offset_left = 50.0
 offset_top = 50.0
 offset_right = -50.0
 offset_bottom = -50.0
-custom_constants/separation = 75
-script = null
+theme_override_constants/separation = 75
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -55,21 +50,18 @@ __meta__ = {
 offset_right = 770.0
 offset_bottom = 1340.0
 size_flags_horizontal = 3
-custom_constants/separation = 50
-script = null
+theme_override_constants/separation = 50
 
 [node name="ArabicTitle" type="Label" parent="HBoxContainer/VBoxContainer2"]
 offset_right = 770.0
 offset_bottom = 91.0
-custom_fonts/font = SubResource( 1 )
-custom_font_sizes/font_size = 64
-custom_constants/shadow_offset_x = 4
-custom_constants/shadow_offset_y = 4
-custom_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = SubResource( "1" )
+theme_override_font_sizes/font_size = 64
 text = "Arabic"
 align = 1
-structured_text_bidi_override_options = [  ]
-script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -77,17 +69,15 @@ __meta__ = {
 [node name="Arabic" type="Label" parent="HBoxContainer/VBoxContainer2"]
 offset_top = 141.0
 offset_right = 770.0
-offset_bottom = 951.0
-custom_fonts/font = SubResource( 2 )
-custom_font_sizes/font_size = 38
-custom_constants/shadow_offset_x = 4
-custom_constants/shadow_offset_y = 4
-custom_constants/shadow_outline_size = 0
+offset_bottom = 991.0
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = SubResource( "2" )
+theme_override_font_sizes/font_size = 38
 text = " عندما يريد العالم أن ‪يتكلّم ‬ ، فهو يتحدّث بلغة يونيكود. تسجّل الآن لحضور المؤتمر الدولي العاشر ليونيكود (Unicode Conference)، الذي سيعقد في 10-12 آذار 1997 بمدينة مَايِنْتْس، ألمانيا. و سيجمع المؤتمر بين خبراء من كافة قطاعات الصناعة على الشبكة العالمية انترنيت ويونيكود، حيث ستتم، على الصعيدين الدولي والمحلي على حد سواء مناقشة سبل استخدام يونكود في النظم القائمة وفيما يخص التطبيقات الحاسوبية، الخطوط، تصميم النصوص والحوسبة متعددة اللغات."
 align = 1
-autowrap = true
-structured_text_bidi_override_options = [  ]
-script = null
+autowrap_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -97,21 +87,18 @@ offset_left = 845.0
 offset_right = 1615.0
 offset_bottom = 1340.0
 size_flags_horizontal = 3
-custom_constants/separation = 50
-script = null
+theme_override_constants/separation = 50
 
 [node name="HebrewTitle" type="Label" parent="HBoxContainer/VBoxContainer"]
 offset_right = 770.0
 offset_bottom = 91.0
-custom_fonts/font = SubResource( 1 )
-custom_font_sizes/font_size = 64
-custom_constants/shadow_offset_x = 4
-custom_constants/shadow_offset_y = 4
-custom_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = SubResource( "1" )
+theme_override_font_sizes/font_size = 64
 text = "Hebrew"
 align = 1
-structured_text_bidi_override_options = [  ]
-script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -120,11 +107,11 @@ __meta__ = {
 offset_top = 141.0
 offset_right = 770.0
 offset_bottom = 1149.0
-custom_fonts/font = SubResource( 3 )
-custom_font_sizes/font_size = 38
-custom_constants/shadow_offset_x = 4
-custom_constants/shadow_offset_y = 4
-custom_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = SubResource( "3" )
+theme_override_font_sizes/font_size = 38
 text = "Bidirectional text: התאריכים 10-12 
 
 
@@ -133,9 +120,7 @@ text = "Bidirectional text: התאריכים 10-12
 סעיף ב. כל אדם זכאי לזכויות ולחרויות שנקבעו בהכרזש זו ללא הפליה כלשהיא מטעמי גזע, צבע, מין, לשון, דח, דעה פוליטית או דעה בבעיות אחרות, בגלל מוצא לאומי או חברתי, קנין, לידה או מעמד אחר. גדולה מזו, לא יופלה אדם על פי מעמדה המדיני, על פי סמכותה או על פי מעמדה הבינלאומי של המדינה או הארץ שאליה הוא שייך, דין שהארץ היא עצמאית, ובין שהיא נתונה לנאמנות, בין שהיא נטולת שלטון עצמי ובין שריבונותה מוגבלת כל הגבלה אחרת.
 במרץ"
 align = 1
-autowrap = true
-structured_text_bidi_override_options = [  ]
-script = null
+autowrap_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -145,21 +130,18 @@ offset_left = 1690.0
 offset_right = 2460.0
 offset_bottom = 1340.0
 size_flags_horizontal = 3
-custom_constants/separation = 50
-script = null
+theme_override_constants/separation = 50
 
 [node name="UrduTitle" type="Label" parent="HBoxContainer/VBoxContainer3"]
 offset_right = 770.0
 offset_bottom = 91.0
-custom_fonts/font = SubResource( 1 )
-custom_font_sizes/font_size = 64
-custom_constants/shadow_offset_x = 4
-custom_constants/shadow_offset_y = 4
-custom_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = SubResource( "1" )
+theme_override_font_sizes/font_size = 64
 text = "Urdu"
 align = 1
-structured_text_bidi_override_options = [  ]
-script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -167,12 +149,12 @@ __meta__ = {
 [node name="Urdu" type="Label" parent="HBoxContainer/VBoxContainer3"]
 offset_top = 141.0
 offset_right = 770.0
-offset_bottom = 1219.0
-custom_fonts/font = SubResource( 4 )
-custom_font_sizes/font_size = 32
-custom_constants/shadow_offset_x = 4
-custom_constants/shadow_offset_y = 4
-custom_constants/shadow_outline_size = 0
+offset_bottom = 1317.0
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = SubResource( "4" )
+theme_override_font_sizes/font_size = 32
 text = "حسنِ مہ گرچہ بہ ہنگامِ کمال اچّھا ہے
 اس سے میرا مہِ خورشید جمال اچّھا ہے
 
@@ -188,9 +170,7 @@ text = "حسنِ مہ گرچہ بہ ہنگامِ کمال اچّھا ہے
 ان کے دیکھے سے جو آ جاتی ہے منہ پر رونق
 وہ سمجھتے ہیں کہ بیمار کا حال اچّھا ہے"
 align = 1
-autowrap = true
-structured_text_bidi_override_options = [  ]
-script = null
+autowrap_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

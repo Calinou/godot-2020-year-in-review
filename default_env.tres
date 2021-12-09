@@ -1,14 +1,14 @@
-[gd_resource type="Environment" load_steps=3 format=2]
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://c5h1ti1538ppq"]
 
-[sub_resource type="PhysicalSkyMaterial" id=1]
+[sub_resource type="PhysicalSkyMaterial" id="1"]
 
-[sub_resource type="Sky" id=2]
-sky_material = SubResource( 1 )
+[sub_resource type="Sky" id="2"]
+sky_material = SubResource( "1" )
 process_mode = 3
 
 [resource]
 background_mode = 2
-sky = SubResource( 2 )
+sky = SubResource( "2" )
 tonemap_mode = 2
 tonemap_white = 6.0
 ssao_enabled = true
