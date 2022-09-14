@@ -9,19 +9,16 @@ data = PackedVector3Array(-81.0268, 1.9046, 88.7883, -81.0271, -0.2516, 88.7513,
 [sub_resource type="PhysicalSkyMaterial" id="2"]
 
 [sub_resource type="Sky" id="3"]
-sky_material = SubResource( "2" )
+sky_material = SubResource("2")
 
 [sub_resource type="Environment" id="4"]
 background_mode = 2
-sky = SubResource( "3" )
+sky = SubResource("3")
 tonemap_mode = 3
 tonemap_white = 6.0
 sdfgi_enabled = true
 sdfgi_use_occlusion = true
-sdfgi_read_sky_light = true
 sdfgi_bounce_feedback = 1.0
-sdfgi_cascades = 0
-sdfgi_max_distance = 204.8
 sdfgi_y_scale = 2
 glow_strength = 2.0
 glow_mix = 0.0
@@ -45,16 +42,15 @@ subdivide_depth = 2
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="City" type="MeshInstance3D" parent="StaticBody3D"]
-gi_mode = 1
-mesh = ExtResource( "1" )
+mesh = ExtResource("1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource( "1" )
+shape = SubResource("1")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.980707, -0.0636569, 0.184829, 0, 0.945495, 0.325637, -0.195484, -0.319354, 0.927253, 5.87586, 4.01853, 7.429)
 near = 0.1
-script = ExtResource( "2" )
+script = ExtResource("2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.250225, -0.440269, 0.862294, 0, 0.890627, 0.454735, -0.968188, 0.113786, -0.222857, 66.0532, 33.8784, -6.29953)
@@ -66,120 +62,88 @@ directional_shadow_fade_start = 1.0
 directional_shadow_max_distance = 180.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( "4" )
+environment = SubResource("4")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-mesh = SubResource( "5" )
+mesh = SubResource("5")
 
-[node name="RigidBody3D" type="Node" parent="."]
-__meta__ = {
-"_edit_group_": true
-}
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0)
-shape = SubResource( "6" )
+shape = SubResource("6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.684791, 0, 0.00106049)
-gi_mode = 1
-mesh = SubResource( "7" )
+mesh = SubResource("7")
 
-[node name="RigidBody3D2" type="Node" parent="."]
-__meta__ = {
-"_edit_group_": true
-}
+[node name="RigidBody3D2" type="RigidBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0)
-shape = SubResource( "6" )
+shape = SubResource("6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.684791, 0, 0.00106049)
-gi_mode = 1
-mesh = SubResource( "7" )
+mesh = SubResource("7")
 
-[node name="RigidBody3D3" type="Node" parent="."]
-__meta__ = {
-"_edit_group_": true
-}
+[node name="RigidBody3D3" type="RigidBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0)
-shape = SubResource( "6" )
+shape = SubResource("6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.684791, 0, 0.00106049)
-gi_mode = 1
-mesh = SubResource( "7" )
+mesh = SubResource("7")
 
-[node name="RigidBody3D4" type="Node" parent="."]
-__meta__ = {
-"_edit_group_": true
-}
+[node name="RigidBody3D4" type="RigidBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0)
-shape = SubResource( "6" )
+shape = SubResource("6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.684791, 0, 0.00106049)
-gi_mode = 1
-mesh = SubResource( "7" )
+mesh = SubResource("7")
 
-[node name="RigidBody3D5" type="Node" parent="."]
-__meta__ = {
-"_edit_group_": true
-}
+[node name="RigidBody3D5" type="RigidBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0)
-shape = SubResource( "6" )
+shape = SubResource("6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.684791, 0, 0.00106049)
-gi_mode = 1
-mesh = SubResource( "7" )
+mesh = SubResource("7")
 
-[node name="RigidBody3D6" type="Node" parent="."]
-__meta__ = {
-"_edit_group_": true
-}
+[node name="RigidBody3D6" type="RigidBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0)
-shape = SubResource( "6" )
+shape = SubResource("6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.684791, 0, 0.00106049)
-gi_mode = 1
-mesh = SubResource( "7" )
+mesh = SubResource("7")
 
-[node name="RigidBody3D7" type="Node" parent="."]
-__meta__ = {
-"_edit_group_": true
-}
+[node name="RigidBody3D7" type="RigidBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0)
-shape = SubResource( "6" )
+shape = SubResource("6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.684791, 0, 0.00106049)
-gi_mode = 1
-mesh = SubResource( "7" )
+mesh = SubResource("7")
 
-[node name="RigidBody3D8" type="Node" parent="."]
-__meta__ = {
-"_edit_group_": true
-}
+[node name="RigidBody3D8" type="RigidBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0)
-shape = SubResource( "6" )
+shape = SubResource("6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.684791, 0, 0.00106049)
-gi_mode = 1
-mesh = SubResource( "7" )
+mesh = SubResource("7")

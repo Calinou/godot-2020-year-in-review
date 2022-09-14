@@ -1,11 +1,6 @@
 extends Camera3D
 
 
-func _ready() -> void:
-	# Only enable MSAA while the project is running to improve editor performance.
-	get_viewport().msaa = Viewport.MSAA_4X
-
-
 # AnimationPlayer didn't work correctly at the same the video was made,
 # so `_process()` was used to move the camera instead.
 func _process(delta: float) -> void:

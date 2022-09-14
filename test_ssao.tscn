@@ -6,24 +6,24 @@
 [sub_resource type="PhysicalSkyMaterial" id="1"]
 
 [sub_resource type="Sky" id="2"]
-sky_material = SubResource( "1" )
+sky_material = SubResource("1")
 process_mode = 3
 
 [sub_resource type="Environment" id="3"]
 background_mode = 1
 background_color = Color(0.666667, 0.666667, 0.666667, 1)
-sky = SubResource( "2" )
+sky = SubResource("2")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.5
+tonemap_mode = 3
+tonemap_white = 6.0
+ssao_enabled = true
 ssao_radius = 5.0
 ssao_intensity = 6.0
 ssao_sharpness = 0.0
 ssao_light_affect = 1.0
 sdfgi_use_occlusion = true
-sdfgi_read_sky_light = true
-sdfgi_cascades = 0
-sdfgi_max_distance = 204.8
 glow_strength = 2.0
 glow_mix = 0.0
 glow_blend_mode = 4
@@ -33,16 +33,15 @@ glow_blend_mode = 4
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( "3" )
+environment = SubResource("3")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.210508, 0.177388, -0.961364, 0, 0.983399, 0.181454, 0.977592, 0.0381974, -0.207013, -11.3694, -7.99616, -1.96511)
-script = ExtResource( "2" )
+script = ExtResource("2")
 
 [node name="Sibenik" type="MeshInstance3D" parent="."]
-material_override = SubResource( "4" )
-gi_mode = 1
-mesh = ExtResource( "1" )
+material_override = SubResource("4")
+mesh = ExtResource("1")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -9.47733, 0.106216)
